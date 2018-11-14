@@ -1,0 +1,17 @@
+fastlane_version "2.63.0"
+
+default_platform :android
+
+platform :android do
+  ENV["FASTLANE_HIDE_CHANGELOG"] = "true"  
+  ENV["FASTLANE_SKIP_UPDATE_CHECK"] = "true"    
+
+  PROJECT_NAME = "sample-ci"   
+
+  # public lanes
+  desc "Sample Lane"
+  lane :sample_lane do |options|
+    puts '>>> This is a sample lane'
+    sh 'echo $PWD'
+  end
+end
